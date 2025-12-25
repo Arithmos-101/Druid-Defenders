@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://cthbqbn5osmvb"]
+
+[node name="CardMockup" type="Control"]
+layout_mode = 3
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8132577, 0.8132577, 0.81325763, 1)
+
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.105000004
+offset_bottom = -0.040000916
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ID" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.938
+anchor_right = 0.40800002
+anchor_bottom = 1.0
+offset_top = 0.17596436
+offset_right = -0.008010864
+grow_vertical = 0
+text = "ID:"
+
+[node name="Type" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.002
+anchor_top = 0.855
+anchor_right = 0.51000005
+anchor_bottom = 0.91700006
+offset_left = -0.15200007
+offset_top = -0.040039063
+offset_right = 0.23995972
+offset_bottom = -0.21606445
+grow_vertical = 0
+text = "Card Type:"
