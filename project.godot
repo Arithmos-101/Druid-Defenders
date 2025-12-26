@@ -21,4 +21,4 @@ project/assembly_name="Druid Defenders"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_style/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_style/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg")

@@ -1,0 +1,68 @@
+{
+	"categories": [
+		{
+			"uuid": "dd97e1f8-3443-465c-8c5f-7e596283ed34",
+			"title": "Task",
+			"color": "70bafa"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "f618bc29-42f0-4849-94ab-b73bdd8df8f4",
+			"title": "Todo",
+			"tasks": []
+		},
+		{
+			"uuid": "a7d07be7-a9ff-448d-968b-af39171fe24e",
+			"title": "Doing",
+			"tasks": [
+				"0c971205-a955-4810-b393-fadc27bc9679",
+				"e48d3031-b974-4f3f-99b8-f1b636f35d3b"
+			]
+		},
+		{
+			"uuid": "ce7a61df-ad66-4d18-a6a4-cffcd663951a",
+			"title": "Done",
+			"tasks": []
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "0c971205-a955-4810-b393-fadc27bc9679",
+			"title": "Card",
+			"description": "Develop Card abstraction and types\n\nCard Instance:\n- Name\n- Good/Evil\n- Animal Type\n- Card ID of said Type\n- Maybe UID?",
+			"category": "dd97e1f8-3443-465c-8c5f-7e596283ed34",
+			"steps": [
+				{
+					"details": "Make an AbstactCard",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "e48d3031-b974-4f3f-99b8-f1b636f35d3b",
+			"title": "AbstractCard",
+			"description": "",
+			"category": "dd97e1f8-3443-465c-8c5f-7e596283ed34",
+			"steps": [
+				{
+					"details": "Give vars like ID",
+					"done": false
+				}
+			]
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"f618bc29-42f0-4849-94ab-b73bdd8df8f4"
+			],
+			[
+				"a7d07be7-a9ff-448d-968b-af39171fe24e"
+			],
+			[
+				"ce7a61df-ad66-4d18-a6a4-cffcd663951a"
+			]
+		]
+	}
+}
