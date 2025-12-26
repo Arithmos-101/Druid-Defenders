@@ -10,7 +10,10 @@
 		{
 			"uuid": "f618bc29-42f0-4849-94ab-b73bdd8df8f4",
 			"title": "Todo",
-			"tasks": []
+			"tasks": [
+				"d8d4461f-94a6-4055-94e0-06433461727e",
+				"3f885778-e358-4e48-92d8-24a077df3895"
+			]
 		},
 		{
 			"uuid": "a7d07be7-a9ff-448d-968b-af39171fe24e",
@@ -35,20 +38,26 @@
 				{
 					"details": "Make an AbstactCard",
 					"done": true
+				},
+				{
+					"details": "Create Owl Cards",
+					"done": false
 				}
 			]
 		},
 		{
-			"uuid": "e48d3031-b974-4f3f-99b8-f1b636f35d3b",
-			"title": "AbstractCard",
-			"description": "The CardForm, the resource, tells the AbstractCard what it does. What laws it follows.\nThe AbstractCard is a broad generalization of what a card might want to do.\n\nTo get a specific card, just change the resource.",
+			"uuid": "d8d4461f-94a6-4055-94e0-06433461727e",
+			"title": "Hand",
+			"description": "",
 			"category": "dd97e1f8-3443-465c-8c5f-7e596283ed34",
-			"steps": [
-				{
-					"details": "Give vars like ID",
-					"done": true
-				}
-			]
+			"steps": []
+		},
+		{
+			"uuid": "3f885778-e358-4e48-92d8-24a077df3895",
+			"title": "Board",
+			"description": "",
+			"category": "dd97e1f8-3443-465c-8c5f-7e596283ed34",
+			"steps": []
 		}
 	],
 	"layout": {

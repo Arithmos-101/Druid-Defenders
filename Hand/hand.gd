@@ -10,10 +10,9 @@ func _ready() -> void:
 	hand = []
 	for i in 5:
 		hand.append(abstract_card.instantiate())
-		hand[i].card_form = test_card_form
-	
-	
-	for i in hand.size():
 		var card = hand[i]
+		card.card_form = test_card_form
+		card.position.x += i * 170
+		card.scale = Vector2(0.3,0.3)
 		add_child(card)
-		card.position.x += i * 125
+		

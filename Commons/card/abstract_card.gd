@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 class_name AbstractCard
 
 @export var base_color_rect : ColorRect
