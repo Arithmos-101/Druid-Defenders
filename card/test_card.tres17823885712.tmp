@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bdlslj5pa10lm"]
+
+[ext_resource type="Script" uid="uid://cr8kgskvwg8mn" path="res://Commons/card/card_data.gd" id="1_o5kw8"]
+
+[resource]
+script = ExtResource("1_o5kw8")
+_id = -1
+_title = "Test Card"
+_base_color = Color(0.45323676, 0.63828355, 0.5337258, 1)

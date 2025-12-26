@@ -42,7 +42,7 @@
 		{
 			"uuid": "e48d3031-b974-4f3f-99b8-f1b636f35d3b",
 			"title": "AbstractCard",
-			"description": "",
+			"description": "The CardForm, the resource, tells the AbstractCard what it does. What laws it follows.\nThe AbstractCard is a broad generalization of what a card might want to do.\n\nTo get a specific card, just change the resource.",
 			"category": "dd97e1f8-3443-465c-8c5f-7e596283ed34",
 			"steps": [
 				{
