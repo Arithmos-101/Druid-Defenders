@@ -7,10 +7,12 @@ class_name AbstractCard
 @export var card_form : CardForm
 
 func _ready() -> void:
-	base_color_rect.color = card_form._base_color
-	set_id_text(card_form._id)
-	set_title_text(card_form._title)
+	set_base_color(card_form.base_color)
+	set_id_text(card_form.id)
+	set_title_text(card_form.title)
 
+func set_base_color(color : Color) -> void:
+	base_color_rect.color = color
 func set_title_text(title : String) -> void:
 	title_label.text = title
 func set_id_text(new_id : int) -> void:

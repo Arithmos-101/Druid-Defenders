@@ -16,8 +16,4 @@ func _ready() -> void:
 	for i in hand.size():
 		var card = hand[i]
 		add_child(card)
-		card.position.x = -hand.size() * 60
-	 
-		card.position.x += i * 240
-		card.position.x /= 2
-		print(card.position)
+		card.position.x += i * 125

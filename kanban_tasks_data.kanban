@@ -16,8 +16,7 @@
 			"uuid": "a7d07be7-a9ff-448d-968b-af39171fe24e",
 			"title": "Doing",
 			"tasks": [
-				"0c971205-a955-4810-b393-fadc27bc9679",
-				"e48d3031-b974-4f3f-99b8-f1b636f35d3b"
+				"0c971205-a955-4810-b393-fadc27bc9679"
 			]
 		},
 		{
@@ -35,7 +34,7 @@
 			"steps": [
 				{
 					"details": "Make an AbstactCard",
-					"done": false
+					"done": true
 				}
 			]
 		},
@@ -47,7 +46,7 @@
 			"steps": [
 				{
 					"details": "Give vars like ID",
-					"done": false
+					"done": true
 				}
 			]
 		}
