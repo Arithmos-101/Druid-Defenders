@@ -3,6 +3,7 @@ class_name Card
 
 const HOVER_SCALE = Vector2(1.2,1.2)
 const HOVER_ZOOM_SPEED = 4.0
+const VECTOR2_ERROR = Vector2(0.005,0.005)
 @export var base_color_rect : ColorRect
 @export var title_label : RichTextLabel
 @export var id_label : RichTextLabel
@@ -28,26 +29,18 @@ func set_id_text(new_id : int) -> void:
 	id_label.text = "ID: " + str(new_id)
 
 func _process(delta: float) -> void:
-	if is_hovering:
-		print(_time)
-		_time = clamp(delta + _time, 0.0, 1.0)
-		scale = lerp(_starting_scale, _ending_scale, ease(_time, 0.08))
-	elif not is_hovering and scale != _starting_scale:
-		pass
-		_time = clamp(delta - _time, 0.0, 1.0)
-		print("t: ", _time)
-		scale = lerp(_ending_scale, _starting_scale, _time)
-		print(scale)
-		
+	card_focus(delta)
 
-func scale_card(val : float) -> void:
-	scale *= val
-func descale_card(val : float) -> void:
-	scale /= val
+func card_focus(delta: float) -> void:
+	if is_hovering:
+		_time = clamp(_time + delta, 0.0, 1.0)
+		scale = lerp(_starting_scale, _ending_scale, ease(_time, 0.08))
+	else:
+		_time = 0
+		scale = _starting_scale
 
 func _on_mouse_sensor_mouse_entered() -> void:
 	is_hovering = true
-
 
 func _on_mouse_sensor_mouse_exited() -> void:
 	is_hovering = false
