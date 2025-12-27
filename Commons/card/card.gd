@@ -7,6 +7,7 @@ const VECTOR2_ERROR = Vector2(0.005,0.005)
 @export var base_color_rect : ColorRect
 @export var title_label : RichTextLabel
 @export var id_label : RichTextLabel
+@export var image_rect : TextureRect
 @export var card_form : CardForm
 var is_hovering := false
 
@@ -18,6 +19,7 @@ func _ready() -> void:
 	set_base_color(card_form.base_color)
 	set_id_text(card_form.id)
 	set_title_text(card_form.title)
+	set_image(card_form.image)
 	_starting_scale = scale
 	_ending_scale = scale * HOVER_SCALE
 
@@ -27,6 +29,8 @@ func set_title_text(title : String) -> void:
 	title_label.text = title
 func set_id_text(new_id : int) -> void:
 	id_label.text = "ID: " + str(new_id)
+func set_image(image : Texture) -> void:
+	image_rect.texture = image
 
 func _process(delta: float) -> void:
 	card_focus(delta)

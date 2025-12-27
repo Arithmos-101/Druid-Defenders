@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardForm" load_steps=2 format=3 uid="uid://bdlslj5pa10lm"]
+[gd_resource type="Resource" script_class="CardForm" load_steps=3 format=3 uid="uid://bdlslj5pa10lm"]
 
+[ext_resource type="Texture2D" uid="uid://bgrp646tqrdiy" path="res://icon.svg" id="1_hiejg"]
 [ext_resource type="Script" uid="uid://cr8kgskvwg8mn" path="res://Commons/card/card_form.gd" id="1_o5kw8"]
 
 [resource]
@@ -7,3 +8,4 @@ script = ExtResource("1_o5kw8")
 id = -1
 title = "Test Card"
 base_color = Color(0.43083054, 0.6448483, 0.52439886, 1)
+image = ExtResource("1_hiejg")
