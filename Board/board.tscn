@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://0yo1h3cf0sgt"]
+[gd_scene load_steps=3 format=3 uid="uid://0yo1h3cf0sgt"]
 
-[ext_resource type="Script" uid="uid://wwthyvhihdmr" path="res://Hand/hand.gd" id="1_6dqwo"]
+[ext_resource type="Script" uid="uid://wwthyvhihdmr" path="res://deck/hand/hand.gd" id="1_5c38k"]
+[ext_resource type="Script" uid="uid://p45aecmox73j" path="res://deck/draw/card_draw.gd" id="2_k4dee"]
 
 [node name="Board" type="Control"]
 layout_mode = 3
@@ -19,16 +20,26 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.24477637, 0.2447764, 0.24477637, 1)
 
-[node name="Hand" type="Control" parent="."]
+[node name="Player" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 276.0
+offset_right = 634.0
+offset_bottom = 715.0
+
+[node name="CardHand" type="Control" parent="Player"]
 layout_mode = 1
-anchor_left = 0.5
-anchor_top = 0.99600005
-anchor_right = 0.5
-anchor_bottom = 0.9990001
-offset_left = -256.0
-offset_top = -283.12006
-offset_right = 250.66663
-offset_bottom = -0.2800293
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_6dqwo")
+anchors_preset = 0
+offset_left = 99.0
+offset_top = 55.0
+offset_right = 605.6666
+offset_bottom = 337.83997
+script = ExtResource("1_5c38k")
+
+[node name="CardDraw" type="Control" parent="Player"]
+anchors_preset = 0
+offset_left = 1068.0
+offset_top = 235.0
+offset_right = 1174.0
+offset_bottom = 349.0
+script = ExtResource("2_k4dee")

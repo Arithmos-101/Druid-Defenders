@@ -1,12 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://lltjt1mte0vq"]
 
-[ext_resource type="Script" uid="uid://dfr4ncqotin8o" path="res://Commons/card/card.gd" id="1_mf3xv"]
+[ext_resource type="Script" uid="uid://dfr4ncqotin8o" path="res://commons/card/card.gd" id="1_mf3xv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5iwxe"]
 bg_color = Color(0, 0, 0, 1)
 
 [node name="Card" type="Node2D" node_paths=PackedStringArray("base_color_rect", "title_label", "id_label", "image_rect")]
-process_mode = 1
 script = ExtResource("1_mf3xv")
 base_color_rect = NodePath("Control/BaseColorRect")
 title_label = NodePath("Control/TitleLabel")
