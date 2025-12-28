@@ -109,7 +109,6 @@ offset_left = -271.0
 offset_top = -361.0
 offset_right = 269.0
 offset_bottom = 359.0
-mouse_filter = 1
 mouse_default_cursor_shape = 2
 
 [connection signal="mouse_entered" from="MouseSensor" to="." method="_on_mouse_sensor_mouse_entered"]
