@@ -5,10 +5,11 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5iwxe"]
 bg_color = Color(0, 0, 0, 1)
 
-[node name="Card" type="Node2D" node_paths=PackedStringArray("base_color_rect", "title_label", "id_label", "image_rect")]
+[node name="Card" type="Node2D" node_paths=PackedStringArray("base_color_rect", "title_label", "description_label", "id_label", "image_rect")]
 script = ExtResource("1_mf3xv")
 base_color_rect = NodePath("Control/BaseColorRect")
 title_label = NodePath("Control/TitleLabel")
+description_label = NodePath("Control/DescriptionLabel")
 id_label = NodePath("Control/IDLabel")
 image_rect = NodePath("Control/Panel/TextureRect")
 
@@ -87,7 +88,7 @@ offset_bottom = 0.08883667
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+[node name="DescriptionLabel" type="RichTextLabel" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.081
@@ -99,7 +100,6 @@ offset_top = 0.23999023
 offset_right = -0.1000061
 offset_bottom = 0.27996826
 theme_override_font_sizes/normal_font_size = 32
-text = "Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test."
 horizontal_alignment = 1
 
 [node name="MouseSensor" type="Control" parent="."]

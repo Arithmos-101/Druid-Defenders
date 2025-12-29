@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardForm" load_steps=3 format=3 uid="uid://qhotbmyf4cjv"]
+
+[ext_resource type="Texture2D" uid="uid://bgrp646tqrdiy" path="res://icon.svg" id="1_06lmn"]
+[ext_resource type="Script" uid="uid://cr8kgskvwg8mn" path="res://commons/card/card_form.gd" id="2_r146j"]
+
+[resource]
+script = ExtResource("2_r146j")
+id = 1003
+title = "Fox Pounce"
+description = "Flip a coin, if heads, deal 3 damage."
+base_color = Color(1, 0.6, 0, 1)
+image = ExtResource("1_06lmn")
