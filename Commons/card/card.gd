@@ -1,6 +1,7 @@
 extends Node2D
 class_name Card
 
+@export var size := Vector2(540, 720)
 @export var base_color_rect : ColorRect
 @export var title_label : RichTextLabel
 @export var description_label : RichTextLabel
@@ -9,6 +10,7 @@ class_name Card
 @export var card_form : CardForm
 var is_hovering := false
 var time := 0.0
+
 
 func _ready() -> void:
 	set_base_color(card_form.base_color)

@@ -16,10 +16,10 @@ image_rect = NodePath("Control/Panel/TextureRect")
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -269.0
-offset_top = -347.0
-offset_right = 271.0
-offset_bottom = 373.0
+offset_left = -270.0
+offset_top = -360.0
+offset_right = 270.0
+offset_bottom = 360.0
 
 [node name="BaseColorRect" type="ColorRect" parent="Control"]
 layout_mode = 1
