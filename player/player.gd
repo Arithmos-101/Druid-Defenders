@@ -4,4 +4,4 @@ extends Control
 @export var card_draw : CardDraw
 
 func _ready() -> void:
-	pass
+	card_draw.connect("card_drawn", card_hand.append_card)

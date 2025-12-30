@@ -1,6 +1,8 @@
 extends Control
 class_name CardDraw
 
+signal card_drawn(card : Card)
+
 const SLIDE_UP_DISTANCE = Vector2(0, 20)
 
 var draw_deck : Array[Card]
@@ -43,6 +45,7 @@ func _on_card_pressed(card : Card) -> void:
 		return
 	
 	pop(top_card)
+	emit_signal("card_drawn", top_card)
 	
 func pop_back() -> Card:
 	if draw_deck.is_empty():

@@ -18,7 +18,16 @@ func append(type : CardForm) -> void:
 	var card_real_size = card.size * _starting_scale
 	card.card_form = type
 	card.scale = _starting_scale
-	print(_end_deck_position)
+	card.position.x = _end_deck_position.x
+	if hand.size() > 0:
+		card.position.x += CARD_X_SEPERATION
+	hand.append(card)
+	add_child(card)
+	_center_hand(card_real_size)
+	
+func append_card(card : Card) -> void:
+	var card_real_size = card.size * _starting_scale
+	card.scale = _starting_scale
 	card.position.x = _end_deck_position.x
 	if hand.size() > 0:
 		card.position.x += CARD_X_SEPERATION
