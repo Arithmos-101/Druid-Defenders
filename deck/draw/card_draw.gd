@@ -5,27 +5,19 @@ signal card_drawn(card : Card)
 
 const SLIDE_UP_DISTANCE = Vector2(0, 20)
 
-var draw_deck : Array[Card]
+var card_stack : Array[Card]
 
-var _starting_position : Vector2
-var _ending_position : Vector2
+var _starting_scale := Vector2(0.3,0.3)
+var _starting_position := Vector2.ZERO
+var _ending_position := _starting_position - SLIDE_UP_DISTANCE
 
 func _ready() -> void:
-	draw_deck = []
-	for i in 3:
-		draw_deck.append(CardTypes.default_card.instantiate())
-		var card = draw_deck[i]
-		card.card_form = CardTypes.test_card_form
-		card.scale = Vector2(0.3,0.3)
-		card.connect("card_pressed", _on_card_pressed)
-		add_child(card)
-		_starting_position = Vector2.ZERO
-		_ending_position = _starting_position - SLIDE_UP_DISTANCE
+	card_stack = []
 
 func _process(delta: float) -> void:
 	var top_card
-	if not draw_deck.is_empty():
-		top_card = draw_deck.back()
+	if not card_stack.is_empty():
+		top_card = card_stack.back()
 		card_focus(top_card, delta)
 
 func card_focus(card: Card, delta: float) -> void:
@@ -40,7 +32,7 @@ func card_slide_up(card: Card, delta: float) -> void:
 		card.position = _starting_position
 
 func _on_card_pressed(card : Card) -> void:
-	var top_card = draw_deck.back()
+	var top_card = card_stack.back()
 	if card != top_card:
 		return
 	
@@ -48,20 +40,29 @@ func _on_card_pressed(card : Card) -> void:
 	emit_signal("card_drawn", top_card)
 	
 func pop_back() -> Card:
-	if draw_deck.is_empty():
+	if card_stack.is_empty():
 		return null
-	var card = draw_deck.back()
-	remove_child(draw_deck.back())
-	draw_deck.pop_back()
+	var card = card_stack.back()
+	card.disconnect("card_pressed", _on_card_pressed)
+	remove_child(card_stack.back())
+	card_stack.pop_back()
 	return card
 
 func pop(card : Card) -> bool:
-	if draw_deck.is_empty():
+	if card_stack.is_empty():
 		return false
-	if not draw_deck.has(card):
+	if not card_stack.has(card):
 		return false
 	if not get_children().has(card):
 		return false
-	draw_deck.pop_at(draw_deck.find(card))
+	card.disconnect("card_pressed", _on_card_pressed)
+	card_stack.pop_at(card_stack.find(card))
 	remove_child(card)
 	return true
+
+func append_card(card : Card) -> void:
+	card.scale = _starting_scale
+	card.position = _starting_position
+	card_stack.append(card)
+	card.connect("card_pressed", _on_card_pressed)
+	add_child(card)

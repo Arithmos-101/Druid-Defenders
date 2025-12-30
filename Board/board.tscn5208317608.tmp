@@ -33,7 +33,6 @@ script = ExtResource("1_vj8kq")
 card_hand = NodePath("CardHand")
 card_draw = NodePath("CardDraw")
 card_deck = NodePath("CardDeck")
-deck = Array[int]([1001, 1002, 1003, 1004])
 
 [node name="CardHand" type="Control" parent="Player"]
 layout_mode = 1
