@@ -44,12 +44,13 @@ func _on_card_pressed(card : Card) -> void:
 	
 	pop(top_card)
 	
-func pop_back() -> bool:
+func pop_back() -> Card:
 	if draw_deck.is_empty():
-		return false
+		return null
+	var card = draw_deck.back()
 	remove_child(draw_deck.back())
 	draw_deck.pop_back()
-	return true
+	return card
 
 func pop(card : Card) -> bool:
 	if draw_deck.is_empty():
