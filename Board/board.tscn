@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://0yo1h3cf0sgt"]
+[gd_scene load_steps=4 format=3 uid="uid://0yo1h3cf0sgt"]
 
 [ext_resource type="Script" uid="uid://wwthyvhihdmr" path="res://deck/hand/hand.gd" id="1_5c38k"]
+[ext_resource type="Script" uid="uid://hn7mlw1irxdk" path="res://player/player.gd" id="1_vj8kq"]
 [ext_resource type="Script" uid="uid://p45aecmox73j" path="res://deck/draw/card_draw.gd" id="2_k4dee"]
 
 [node name="Board" type="Control"]
@@ -20,13 +21,16 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.24477637, 0.2447764, 0.24477637, 1)
 
-[node name="Player" type="Control" parent="."]
+[node name="Player" type="Control" parent="." node_paths=PackedStringArray("card_hand", "card_draw")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vj8kq")
+card_hand = NodePath("CardHand")
+card_draw = NodePath("CardDraw")
 
 [node name="CardHand" type="Control" parent="Player"]
 layout_mode = 1

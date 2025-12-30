@@ -1,6 +1,8 @@
 extends Node2D
 class_name Card
 
+signal card_pressed(card : Card)
+
 @export var size := Vector2(540, 720)
 @export var base_color_rect : ColorRect
 @export var title_label : RichTextLabel
@@ -37,3 +39,6 @@ func _on_mouse_sensor_mouse_entered() -> void:
 
 func _on_mouse_sensor_mouse_exited() -> void:
 	is_hovering = false
+
+func _on_mouse_sensor_pressed() -> void:
+	emit_signal("card_pressed", self)

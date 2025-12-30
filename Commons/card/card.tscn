@@ -1,9 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://lltjt1mte0vq"]
+[gd_scene load_steps=8 format=3 uid="uid://lltjt1mte0vq"]
 
 [ext_resource type="Script" uid="uid://dfr4ncqotin8o" path="res://commons/card/card.gd" id="1_mf3xv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5iwxe"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_soy7q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yeeex"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pe8vs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6kita"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n5os8"]
 
 [node name="Card" type="Node2D" node_paths=PackedStringArray("base_color_rect", "title_label", "description_label", "id_label", "image_rect")]
 script = ExtResource("1_mf3xv")
@@ -102,14 +112,18 @@ offset_bottom = 0.27996826
 theme_override_font_sizes/normal_font_size = 32
 horizontal_alignment = 1
 
-[node name="MouseSensor" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
+[node name="MouseSensor" type="Button" parent="."]
 offset_left = -271.0
 offset_top = -361.0
 offset_right = 269.0
 offset_bottom = 359.0
 mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_soy7q")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yeeex")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pe8vs")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6kita")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n5os8")
 
 [connection signal="mouse_entered" from="MouseSensor" to="." method="_on_mouse_sensor_mouse_entered"]
 [connection signal="mouse_exited" from="MouseSensor" to="." method="_on_mouse_sensor_mouse_exited"]
+[connection signal="pressed" from="MouseSensor" to="." method="_on_mouse_sensor_pressed"]

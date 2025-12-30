@@ -1,4 +1,5 @@
 extends Control
+class_name CardHand
 
 const HOVER_SCALE = Vector2(1.2,1.2)
 const CARD_X_SEPERATION = 10
@@ -11,15 +12,6 @@ var _ending_scale := _starting_scale * HOVER_SCALE
 var time := 0.0
 
 var _end_deck_position := Vector2.ZERO
-
-func _ready() -> void:
-	hand = []
-	#for i in 5:
-	#	append(CardTypes.test_card_form)
-	
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Test"):
-		append(CardTypes.test_card_form)
 
 func append(type : CardForm) -> void:
 	var card = CardTypes.default_card.instantiate()
@@ -35,7 +27,6 @@ func append(type : CardForm) -> void:
 	_center_hand(card_real_size)
 
 func _center_hand(appended_card_size : Vector2) -> void:
-	await get_tree().create_timer(0.5).timeout
 	print("back pos ",hand.back().position)
 	if hand.size() == 1:
 		_end_deck_position = hand.back().position + appended_card_size
