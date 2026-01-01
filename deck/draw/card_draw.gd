@@ -11,9 +11,6 @@ var _starting_scale := Vector2(0.3,0.3)
 var _starting_position := Vector2.ZERO
 var _ending_position := _starting_position - SLIDE_UP_DISTANCE
 
-func _ready() -> void:
-	card_stack = []
-
 func _process(delta: float) -> void:
 	var top_card
 	if not card_stack.is_empty():
@@ -35,10 +32,14 @@ func _on_card_pressed(card : Card) -> void:
 	var top_card = card_stack.back()
 	if card != top_card:
 		return
-	
+	if !_can_draw(card):
+		return
 	pop(top_card)
 	emit_signal("card_drawn", top_card)
-	
+
+func _can_draw(card) -> bool:
+	return true
+
 func pop_back() -> Card:
 	if card_stack.is_empty():
 		return null
