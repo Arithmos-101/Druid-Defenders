@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://dj8tr0llmhofw"]
+
+[ext_resource type="Script" uid="uid://hn7mlw1irxdk" path="res://player/main_player.gd" id="1_qjkh3"]
+[ext_resource type="Script" uid="uid://wwthyvhihdmr" path="res://deck/hand/hand.gd" id="2_g6k8r"]
+[ext_resource type="Script" uid="uid://p45aecmox73j" path="res://deck/draw/card_draw.gd" id="3_boad6"]
+[ext_resource type="Script" uid="uid://c51b2og001uqw" path="res://deck/card_deck.gd" id="4_rgyib"]
+[ext_resource type="Script" uid="uid://dddwtmifqpgcf" path="res://deck/discard/card_discard.gd" id="5_hg6s5"]
+
+[node name="MainPlayer" type="Control" node_paths=PackedStringArray("card_hand", "card_draw", "card_discard", "card_deck")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qjkh3")
+card_hand = NodePath("CardHand")
+card_draw = NodePath("CardDraw")
+card_discard = NodePath("CardDiscard")
+card_deck = NodePath("CardDeck")
+deck = Array[int]([1001, 1002, 1003, 1004])
+
+[node name="CardHand" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_g6k8r")
+
+[node name="CardDraw" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = 247.33002
+offset_right = -1.0
+offset_bottom = 247.33002
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_boad6")
+
+[node name="CardDeck" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_rgyib")
+
+[node name="CardDiscard" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -270.0
+offset_bottom = -270.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_hg6s5")
